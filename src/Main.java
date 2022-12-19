@@ -24,13 +24,10 @@ public class Main {
         staffList.add(borisovaOksana);
         System.out.println("Количество сотрудников компании: " + staffList.size());// проверка размера массива сотрудников компании
         for (int i = 0; i < staffList.size(); i++) {
-            System.out.print(staffList/*почему не даёт написать[i]*/.get(i)/*почему через get(i)*/ +"; "); // и получается везде 0... какого лешего так? Это изза Арайлист, но что с ним не так?
+            System.out.println(staffList/*почему не даёт написать[i]*/.get(i)/*почему через get(i)*/ +"; "); // и получается везде 0... какого лешего так? Это изза Арайлист, но что с ним не так?
         }
-        //переписываю всю ту дичь что получилась выше!
-        Staff[] allStaffPerson = {ivanovIvan,sidorovFedya,petrovaElena,vasilievaMariya,volkovOleg,borisovaOksana};
-        for (int i = 0; i < allStaffPerson.length; i++) {
-            System.out.println(allStaffPerson[i]); // и получаю новую дичь! За*бись..
-        }
+
+
         int[] salaryList = new int[staffList.size()];
 
         //хочу в созданный листЗарплат с помощью цикла внести данные о зарплатах всех сотрудников
