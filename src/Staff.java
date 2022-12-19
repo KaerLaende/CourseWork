@@ -4,8 +4,12 @@ public class Staff {
     int age;
     int position;
     int salary;
-    Staff(String name, String surname, int age, int position, int salary) {
-
+    public Staff(String name, String surname, int age, int position, int salary) {
+        this.name=name;
+        this.surname=surname;
+        this.age = age;
+        this.position = position;
+        this.salary = salary;
     }
     public String toString() {
        return "Сотрудник: "+surname +" "+ name +" "+  " возрастом "+age +" лет, находится на должности "+  position+ " текущий оклад равен: "+ salary+" рублей.";
