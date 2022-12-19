@@ -27,15 +27,43 @@ public class Main {
             System.out.println(staffList/*почему не даёт написать[i]*/.get(i)/*почему через get(i)*/ +"; "); // и получается везде 0... какого лешего так? Это изза Арайлист, но что с ним не так?
         }
 
+        System.out.println("Оклады сотрудников составляют:");
 
         int[] salaryList = new int[staffList.size()];
 
         //хочу в созданный листЗарплат с помощью цикла внести данные о зарплатах всех сотрудников
+
         for (int i = 0; i < salaryList.length; i++) {
-            //salaryList[i] = salaryList[i].salary; // как это сделать?
+            salaryList[i] = staffList.get(i).salary; // Когда самый первый раз делал  делал правильно
+            // но почему то Kotlin, наверно, меня сбил и я не по Java'вски написал конструктор, то ли простно нубас...
             System.out.print(salaryList[i] + "; ");
         }
+        System.out.println();
+
+        System.out.printf("Сумма ежемесячных затрат компании на зароботную плату сотрудников составила %d рублей.%n",getSumSalary(salaryList));
+
+
+
+
+
+
+
+
+
+
         // я хз кто это все наговнокодил... но это точно не Я!
 
     }
+
+    //метод получения суммы целочисленного массива
+    public static int getSumSalary(int[] salary){
+        int sumSalary=0;
+        for (int i = 0; i < salary.length; i++) {
+            sumSalary+=salary[i];
+        }
+        return sumSalary;
+        // неужели в стандартном наборе методов java такого метода получения суммы не нашлось?
+    }
+
+
 }
