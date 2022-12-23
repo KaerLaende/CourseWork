@@ -5,10 +5,9 @@ import Staff.Staff;
 public class Bosses extends Staff {
     public Bosses(String name, String surname, int age, int position, int salary) {
         super(name, surname, age, position, salary);
-        this.department = department;
     }
 
-    String department = "Руководитель!";
+    private final String department = "Руководитель!";
     @Override
     public String toString() {
         return super.toString()+ " " + department;

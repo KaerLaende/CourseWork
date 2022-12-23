@@ -5,9 +5,8 @@ import java.util.Objects;
 public class Managers extends Staff {
     public Managers(String name, String surname, int age, int position, int salary) {
         super(name, surname, age, position, salary);
-        this.department = department;
     }
-    String department = " Отдел продаж";
+    private final String department = " Отдел продаж";
 
     public String getDepartment() {
         return department;

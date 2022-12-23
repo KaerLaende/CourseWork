@@ -40,12 +40,12 @@ public class EmployeeBook {
 
     /*===================================Методы EmployeeBook========================*/
     //добавление
-    public void addStaff(Object o){
-        staffList.add((Staff) o);
+    public void addStaff(Staff o){
+        staffList.add(o);
     }
     //удаление
-    public void removeStaff(Object o){
-        staffList.remove((Staff) o);
+    public void removeStaff(Staff o){
+        staffList.remove(o);
     }
 
     /* повышение в должности всех изначальных сотрудников
@@ -59,15 +59,15 @@ public class EmployeeBook {
     public void upDepartment( ){
         for (int i = 0; i < staffList.size(); i++) {
             if(staffList.get(i).getPosition()==1&&staffList.get(i).getClass()==Staff.class){
-                //условие по нахождению высокой позиции    ->    ↑ для текущей долженности           ->              ↑
-                Object object =new Managers(staffList.get(i).getName(),staffList.get(i).getSurname(),staffList.get(i).getAge(),staffList.get(i).getPosition(),staffList.get(i).getSalary());
+                //условие по нахождению высокой↑ позиции  для ↑текущей долженности
+                Staff object =new Managers(staffList.get(i).getName(),staffList.get(i).getSurname(),staffList.get(i).getAge(),staffList.get(i).getPosition(),staffList.get(i).getSalary());
                 //я несколько раз Ох*ул пока написал эту ↑ строчку
                 addStaff(object);
                 //удаление старой строчки
                 removeStaff(staffList.get(i));
 
             } else if(staffList.get(i).getPosition()==4&&staffList.get(i).getClass()==Managers.class){
-                Object object =new Bosses(staffList.get(i).getName(),staffList.get(i).getSurname(),staffList.get(i).getAge(),staffList.get(i).getPosition(),staffList.get(i).getSalary());
+                Staff object =new Bosses(staffList.get(i).getName(),staffList.get(i).getSurname(),staffList.get(i).getAge(),staffList.get(i).getPosition(),staffList.get(i).getSalary());
                 addStaff(object);
                 removeStaff(staffList.get(i));
             }
